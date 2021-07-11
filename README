@@ -1,0 +1,3 @@
+These folders contain the simulation files which have been used to derive the simulation results in the paper.
+
+Note that we only included the sources and not the final results, like the extracted parasitic networks, due to non-disclosure agreements on the used tools and libraries. However, at some points we added some parts of the open-source Involution Tool, which is available at https://github.com/oehlinscher/InvolutionTool. The corresponding files are marked by a Copyright notice.
