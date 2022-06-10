@@ -1,4 +1,4 @@
-module or_loop (mygnd, myin, myout);
+module nor_inv_chain(mygnd, myin, myout);
        input myin;
 	   input mygnd;
        output myout;
