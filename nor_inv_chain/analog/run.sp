@@ -19,18 +19,19 @@
 .TEMP 25
 .OPTION
 + INGOLD=2
++ MEASOUT=1
 + PARHIER=LOCAL
-
-*+ POST=CSDF
++ POST=2
 + PROBE
 + BRIEF
 + ACCURATE
 + ABSVAR=0.05
-*+ DELMAX=100fs
-+ dc_pivot_check=yes
++ DELMAX=100fs
 
 * vdd
 VDD VDD GND 0.8v
+
+VIN myin GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
 
 * circuit under test
 XNOR0 myin GND STAGE0 VDD VDD GND GND NOR2_X1
@@ -41,9 +42,6 @@ XNOR4 STAGE3 GND STAGE4 VDD VDD GND GND NOR2_X1
 XNOR5 STAGE4 GND O_C_TERM VDD VDD GND GND NOR2_X1
 C_TERM O_C_TERM GND 0.0779pF
 
-VIN myin GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
-
 .PROBE TRAN V(myin) V(STAGE0)
 .TRAN 1ps tend
-
 .END
