@@ -1,5 +1,5 @@
 * circuit: nor inv chain
-simulator lang=spice
+*simulator lang=spice
 
 *.PARAM pw=<sed>pw<sed>as
 .PARAM supp=0.8V slope=0.1fs
@@ -13,7 +13,7 @@ simulator lang=spice
 .INCLUDE /home/s11777724/involution_tool_library_files/backend/spice/cell/NOR2_X1.sp
 
 **** SPECTRE Back Annotation
-.option spef='../place_and_route/nor_inv_chain.spef'
+*.option spef='../place_and_route/nor_inv_chain.spef'
 ****
 
 .TEMP 25
