@@ -7,10 +7,10 @@ simulator lang=spice
 .PARAM baseVal=0V peakVal=0.8V tend=0.8ns
 
 
-.LIB /home/s11777724/involution_tool_library_files/back_end/spice/fet.inc CMG 
+.LIB /home/s11777724/involution_tool_library_files/backend/spice/fet.inc CMG 
 
 * main circuit
-.INCLUDE /home/s11777724/involution_tool_library_files/back_end/spice/cell/NOR2_X1.sp
+.INCLUDE /home/s11777724/involution_tool_library_files/backend/spice/cell/NOR2_X1.sp
 
 **** SPECTRE Back Annotation
 .option spef='../place_and_route/or_loop_altered.spef'
