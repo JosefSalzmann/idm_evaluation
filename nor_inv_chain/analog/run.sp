@@ -1,5 +1,5 @@
 * circuit: nor inv chain
-*simulator lang=spice
+simulator lang=spice
 
 *.PARAM pw=<sed>pw<sed>as
 .PARAM supp=0.8V slope=0.1fs
