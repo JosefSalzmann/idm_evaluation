@@ -19,14 +19,14 @@ simulator lang=spice
 .TEMP 25
 .OPTION
 + INGOLD=2
-+ MEASOUT=1
 + PARHIER=LOCAL
-+ POST=2
+*+ POST=CSDF
 + PROBE
 + BRIEF
 + ACCURATE
 + ABSVAR=0.05
-+ DELMAX=100fs
+*+ DELMAX=100fs
++ dc_pivot_check=yes
 
 * vdd
 VDD VDD GND 0.8v
