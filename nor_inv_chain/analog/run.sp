@@ -24,7 +24,7 @@ simulator lang=spice
 + PROBE
 + BRIEF
 + ACCURATE
-+ ABSVAR=0.05
++ ABSVAR=0.001
 *+ DELMAX=100fs
 + dc_pivot_check=yes
 
