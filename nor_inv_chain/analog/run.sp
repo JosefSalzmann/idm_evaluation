@@ -3,7 +3,7 @@ simulator lang=spice
 
 *.PARAM pw=<sed>pw<sed>as
 .PARAM supp=0.8V slope=0.1fs
-.PARAM t_init0=0.1ns t_init1=0.122ns
+.PARAM t_init0=0.1ns t_init1=0.130ns
 .PARAM baseVal=0V peakVal=0.8V tend=2.0ns
 
 
@@ -26,6 +26,7 @@ simulator lang=spice
 + ACCURATE
 + ABSVAR=0.0001
 + DVDT=2
++ RELTOL=1e-11
 *+ DELMAX=100fs
 + dc_pivot_check=yes
 
@@ -43,6 +44,6 @@ XNOR4 STAGE3 GND STAGE4 VDD VDD GND GND NOR2_X1
 XNOR5 STAGE4 GND O_C_TERM VDD VDD GND GND NOR2_X1
 C_TERM O_C_TERM GND 0.0779pF
 
-.PROBE TRAN V(myin) V(STAGE0)
+.PROBE TRAN V(myin) V(STAGE0) V(STAGE1) V(STAGE2) V(STAGE3) V(STAGE4)
 .TRAN 0.1ps tend
 .END
