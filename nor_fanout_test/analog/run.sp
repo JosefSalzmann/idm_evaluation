@@ -1,10 +1,13 @@
 * circuit: nor inv chain
 simulator lang=spice
 
-*.PARAM pw=<sed>pw<sed>as
-.PARAM supp=0.8V slope=0.1fs
-.PARAM t_init0=0.1ns t_init1=0.174ns
-.PARAM baseVal=0V peakVal=0.8V tend=1.0ns
+.PARAM pw1=50ps pw2=400ps vsrc=0.8V srcdc=0.0V
+*.PARAM pw1=50ps pw2=<sed>pw<sed>fs vsrc=supp srcdc=0.0V
+.PARAM supp=0.8V slope=0.1fs start='0.1ns+pw1' realpw2='pw2-slope'
+.PARAM t00=0.1ns t01='t00+0.2ns' t1='t01+0.4ns' t2='t1+6000fs' t3='t2+9000fs' t4='t3+8000fs'
+.PARAM t5='t3+100000fs' t6='t5+100000fs'
+.PARAM baseVal=0V peakVal=0.8V tend=2ns
+*.PARAM baseVal=<sed>base<sed> peakVal=<sed>peak<sed>
 
 
 .LIB /home/s11777724/involution_tool_library_files/backend/spice/fet.inc CMG
@@ -33,7 +36,9 @@ simulator lang=spice
 * vdd
 VDD VDD GND 0.8v
 
-VIN myin GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
+VIN myin GND PWL 0ns baseVal t00 baseVal 't00+slope' peakVal t01 peakVal 't01+slope' baseVal 
++ t1 baseVal 't1+slope' peakVal t2 peakVal 't2+slope' baseVal
++ t3 baseVal 't3+slope' peakVal t4 peakVal 't4+slope' baseVal tend baseVal
 
 XNOR0_1 myin GND STAGE0_1 VDD VDD GND GND NOR2_X1
 * circuit under test
