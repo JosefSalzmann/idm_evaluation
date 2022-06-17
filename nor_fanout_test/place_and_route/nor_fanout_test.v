@@ -1,6 +1,6 @@
 module nor_inv_chain (myin, myout_1_1, myout_2_1, myout_3_1, myout_4_1);
        input myin;
-       output myout;
+       output myout_1_1, myout_3_1, myout_2_1,myout_4_1;
 
        wire GND = 1'b0;
        wire VDD = 1'b1;
