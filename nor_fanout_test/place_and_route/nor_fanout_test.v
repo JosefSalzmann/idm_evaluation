@@ -41,7 +41,4 @@ module nor_inv_chain (myin, myout_1_1, myout_2_1, myout_3_1, myout_4_1);
        NOR2_X1 NOR5_4_3_1 ( .A1 (STAGE4_2_1), .A2 (GND), .ZN (STAGE4_3_1));
        NOR2_X1 NOR5_4_4_1 ( .A1 (STAGE4_3_1), .A2 (GND), .ZN (myout_4_1));
 
-
-       NOR2_X1 NOR25 ( .A1 (STAGE24), .A2 (GND), .ZN (myout));
-
 endmodule
