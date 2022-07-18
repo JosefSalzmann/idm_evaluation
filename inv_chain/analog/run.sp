@@ -1,4 +1,4 @@
-* circuit: nor inv chain
+* circuit: inv chain
 simulator lang=spice
 
 *.PARAM pw=<sed>pw<sed>as
