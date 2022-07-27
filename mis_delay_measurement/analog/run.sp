@@ -836,7 +836,7 @@ VDD VDD GND 0.8v
 
 
 
-VIN0 INA GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
+VINA INA GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
 + t_a_0 baseVal 't_a_0+slope' peakVal
 + t_a_1 peakVal 't_a_1+slope' baseVal
 + t_a_2 baseVal 't_a_2+slope' peakVal
@@ -1240,7 +1240,7 @@ VIN0 INA GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 pea
 
 
 
-VIN0 INB GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
+VINB INB GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
 + t_b_0 baseVal 't_b_0+slope' peakVal
 + t_b_1 peakVal 't_b_1+slope' baseVal
 + t_b_2 baseVal 't_b_2+slope' peakVal
