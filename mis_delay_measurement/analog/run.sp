@@ -4,7 +4,7 @@ simulator lang=spice
 *.PARAM pw=<sed>pw<sed>as
 .PARAM supp=0.8V slope=0.1fs
 .PARAM t_init0=0.1ns t_init1=0.174ns
-.PARAM baseVal=0V peakVal=0.8V tend=1.0ns
+.PARAM baseVal=0V peakVal=0.8V tend=201000ns
 
 
 .LIB /home/s11777724/involution_tool_library_files/backend/spice/fet.inc CMG
