@@ -6,7 +6,7 @@ INPUT_FILE=nor_gate_65nm.v
 EXTENSION=$(suffix $(INPUT_FILE))
 INPUT_NAME=$(basename $(notdir $(INPUT_FILE)))
 # do not set / comment this variable if your input file does not contain solely a netlist
-NETLIST=True
+NETLIST=False
 # set this variable if clock optimzation should be carried out
 #CLOCK=True
 
@@ -24,7 +24,7 @@ GENUS_OUTPUT_PREFIX=genus/$(INPUT_NAME)
 
 INNOVUS_SCRIPT_NAME=innovus.g
 #set this variable to activate optimization in innovus
-INNOVUS_OPT=False
+INNOVUS_OPT=True
 #set this variable to enable only rudimentary floorplanning
 #PRIMITIVE_FLOORPLANING=True
 
