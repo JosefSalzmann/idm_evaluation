@@ -12,7 +12,7 @@ INPUT_NAME=$(basename $(notdir $(INPUT_FILE)))
 
 LIB_SEARCH_PATH=/opt/asiclibs/UMK65LSCSP10BBRCCS_A03_TAPEOUTKIT
 LIB_PATH=synopsys/ccs/uk65lscsp10bbrccs_110c-40_bc_ccs.lib
-LEF_PATH=lef/tf/uk65lscsp10bbrccs_6m1t0f.lef lef/uk65lscsp10bbrccs.lef
+LEF_PATH=lef/uk65lscsp10bbrccs.lef lef/tf/uk65lscsp10bbrccs_6m1t0f.lef
 # name of modules which shall not be optimized
 # use "*" (include quotation marks!) for all modules
 PRESERVE="*"
