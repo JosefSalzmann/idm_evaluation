@@ -24,7 +24,7 @@ GENUS_OUTPUT_PREFIX=genus/$(INPUT_NAME)
 
 INNOVUS_SCRIPT_NAME=innovus.g
 #set this variable to activate optimization in innovus
-INNOVUS_OPT=True
+INNOVUS_OPT=False
 #set this variable to enable only rudimentary floorplanning
 #PRIMITIVE_FLOORPLANING=True
 
@@ -100,7 +100,7 @@ innovus_script:
 
 	printf "\n#general settings\n" >> $(INNOVUS_SCRIPT_NAME)
 	echo "set_db design_process_node $(PROC_NODE)" >> $(INNOVUS_SCRIPT_NAME)
-	echo "set_db design_flow_effort standard" >> $(INNOVUS_SCRIPT_NAME)
+	echo "set_db design_flow_effort express" >> $(INNOVUS_SCRIPT_NAME)
 
 	printf "\n#floorplanning\n" >> $(INNOVUS_SCRIPT_NAME)
 ifdef PRIMITIVE_FLOORPLANING
