@@ -10,9 +10,9 @@ NETLIST=True
 # set this variable if clock optimzation should be carried out
 #CLOCK=True
 
-LIB_SEARCH_PATH=/opt/asiclibs/UMK65LSCLLMVBBR_B03_TAPEOUTKIT
-LIB_PATH=synopsys/ccs/uk65lscllmvbbr_108c125_wc_ccs.lib
-LEF_PATH=lef/uk65lscllmvbbr.lef
+LIB_SEARCH_PATH=/opt/asiclibs/UMK65LSCSP10BBRCCS_A03_TAPEOUTKIT
+LIB_PATH=synopsys/ccs/uk65lscsp10bbrccs_110c-40_bc_ccs.lib
+LEF_PATH=lef/uk65lscsp10bbrccs.lef
 # name of modules which shall not be optimized
 # use "*" (include quotation marks!) for all modules
 PRESERVE="*"
