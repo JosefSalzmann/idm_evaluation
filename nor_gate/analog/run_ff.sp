@@ -1645,7 +1645,7 @@ VINB A2 GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peak
 
 
 * circuit under test
-XNOR1 A1 A2 Z VDD VDD GND GND NOR2_X2
+XNOR0 A1 A2 Z VDD VDD GND GND NOR2_X2
 
 .PROBE TRAN V(A1) V(A2) V(Z)
 .TRAN 0.1ps tend
