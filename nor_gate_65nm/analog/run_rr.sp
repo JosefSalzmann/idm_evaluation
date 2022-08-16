@@ -25,7 +25,7 @@ simulator lang=spice
 + ACCURATE
 + ABSVAR=0.001
 + DVDT=2
-+ RELTOL=1e-10
++ RELTOL=1e-9
 *+ DELMAX=100fs
 + dc_pivot_check=yes
 
