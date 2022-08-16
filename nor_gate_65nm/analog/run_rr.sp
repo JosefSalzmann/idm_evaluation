@@ -2,9 +2,9 @@
 simulator lang=spice
 
 *.PARAM pw=<sed>pw<sed>as
-.PARAM supp=0.8V slope=0.1fs
+.PARAM supp=1.2V slope=0.1fs
 .PARAM t_init0=0.1ns t_init1=0.174ns
-.PARAM baseVal=0V peakVal=0.8V tend=1020.0ns
+.PARAM baseVal=0V peakVal=1.2V tend=1020.0ns
 
 
 .LIB l65ll_v181.lib tt_ll_rvt12
@@ -30,7 +30,7 @@ simulator lang=spice
 + dc_pivot_check=yes
 
 * vdd
-VDD VDD GND 0.8v
+VDD VDD GND 1.2v
 
 .PARAM t_a_0=10ns
 .PARAM t_a_1=12.5ns
