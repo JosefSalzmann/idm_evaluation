@@ -6,7 +6,7 @@ INPUT_FILE=nor_gate_65nm.v
 EXTENSION=$(suffix $(INPUT_FILE))
 INPUT_NAME=$(basename $(notdir $(INPUT_FILE)))
 # do not set / comment this variable if your input file does not contain solely a netlist
-# NETLIST=True
+NETLIST=True
 # set this variable if clock optimzation should be carried out
 #CLOCK=True
 
