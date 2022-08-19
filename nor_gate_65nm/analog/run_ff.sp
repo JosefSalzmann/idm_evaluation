@@ -835,7 +835,7 @@ VDD VDD GND 1.2v
 
 
 
-VINA A1 GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
+VINA myinA1 GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
 + t_a_0 peakVal 't_a_0+slope' baseVal
 + t_a_1 baseVal 't_a_1+slope' peakVal
 + t_a_2 peakVal 't_a_2+slope' baseVal
@@ -1239,7 +1239,7 @@ VINA A1 GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peak
 
 
 
-VINB A2 GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
+VINB myinA2 GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
 + t_b_0 peakVal 't_b_0+slope' baseVal
 + t_b_1 baseVal 't_b_1+slope' peakVal
 + t_b_2 peakVal 't_b_2+slope' baseVal
@@ -1644,9 +1644,9 @@ VINB A2 GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peak
 
 
 * circuit under test
-XNOR0 Z A1 A2 VDD GND GND VDD NR2M0R
+XNOR0 myout myinA1 myinA2 VDD GND GND VDD NR2M0R
 
 
-.PROBE TRAN V(A1) V(A2) V(Z)
+.PROBE TRAN V(myinA1) V(myinA2) V(myout)
 .TRAN 0.1ps tend
 .END
