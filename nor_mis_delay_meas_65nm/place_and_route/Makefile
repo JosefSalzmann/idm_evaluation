@@ -2,7 +2,7 @@
 # hardware design provided in a netlist style description (VHDL or Verilog)
 #
 
-INPUT_FILE=nor_inv_chain.v
+INPUT_FILE=nor_mis_delay_meas_65nm.v
 EXTENSION=$(suffix $(INPUT_FILE))
 INPUT_NAME=$(basename $(notdir $(INPUT_FILE)))
 # do not set / comment this variable if your input file does not contain solely a netlist
@@ -10,14 +10,14 @@ NETLIST=True
 # set this variable if clock optimzation should be carried out
 #CLOCK=True
 
-LIB_SEARCH_PATH=/home/jmaier/MYLIB/NANGATE15/NanGate_15nm_OCL_v0.1_2014_06.A
-LIB_PATH=front_end/timing_power_noise/CCS/NanGate_15nm_OCL_typical_conditional_ccs.lib
-LEF_PATH=back_end/lef/NanGate_15nm_OCL.tech.lef back_end/lef/NanGate_15nm_OCL.macro.lef
+LIB_SEARCH_PATH=/opt/asiclibs/UMK65LSCSP10BBRCCS_A03_TAPEOUTKIT
+LIB_PATH=synopsys/ccs/uk65lscsp10bbrccs_100c25_tc_ccs.lib
+LEF_PATH=lef/tf/uk65lscsp10bbrccs_6m1t0f.lef lef/uk65lscsp10bbrccs.lef
 # name of modules which shall not be optimized
 # use "*" (include quotation marks!) for all modules
 PRESERVE="*"
 # process node in nm
-PROC_NODE=45
+PROC_NODE=65
 
 GENUS_SCRIPT_NAME=genus.g
 GENUS_OUTPUT_PREFIX=genus/$(INPUT_NAME)
@@ -28,7 +28,7 @@ INNOVUS_OPT=True
 #set this variable to enable only rudimentary floorplanning
 #PRIMITIVE_FLOORPLANING=True
 
-INNOVUS_ADD_CAP=200
+#INNOVUS_ADD_CAP=0
 
 all: genus innovus
 
@@ -96,6 +96,7 @@ innovus_script:
 
 	printf "\n#import from GENUS\n" >> $(INNOVUS_SCRIPT_NAME)
 	echo "source $(GENUS_OUTPUT_PREFIX).invs_setup.tcl" >> $(INNOVUS_SCRIPT_NAME)
+#echo "set_db inst:sr_latch/cdn_loop_breaker .dont_touch false" >> $(INNOVUS_SCRIPT_NAME)
 
 	printf "\n#general settings\n" >> $(INNOVUS_SCRIPT_NAME)
 	echo "set_db design_process_node $(PROC_NODE)" >> $(INNOVUS_SCRIPT_NAME)
@@ -142,9 +143,9 @@ ifdef CLOCK
 endif
 
 # add a capactiance of value INNOVUS_ADD_CAP on net HT1
-	echo "set_interactive_constraint_modes default_emulate_constraint_mode" >> $(INNOVUS_SCRIPT_NAME)
-	echo "set_load $(INNOVUS_ADD_CAP) HT1" >> $(INNOVUS_SCRIPT_NAME)
-	echo "set_interactive_constraint_modes {}" >> $(INNOVUS_SCRIPT_NAME)
+#	echo "set_interactive_constraint_modes default_emulate_constraint_mode" >> $(INNOVUS_SCRIPT_NAME)
+#	echo "set_load $(INNOVUS_ADD_CAP) HT1" >> $(INNOVUS_SCRIPT_NAME)
+#	echo "set_interactive_constraint_modes {}" >> $(INNOVUS_SCRIPT_NAME)
 
 	printf "\n#routing\n" >> $(INNOVUS_SCRIPT_NAME)
 # enable this line to activate also routing for effort level express
@@ -180,12 +181,7 @@ run_innovus:
 	printf "###### executing INNOVUS ###\n"
 	innovus -no_gui -stylus -files $(INNOVUS_SCRIPT_NAME)
 
-innovus: innovus_script run_innovus spef sdf
-
-# dirty hack to add large capacitance to the .spef file, was not able to convince Innovus to do it for me
-spef:
-	$(eval SPEF_MARK=$(shell grep HT1 $(INPUT_NAME).spef | awk '{print $$1}'))
-	sed '0,/$(SPEF_MARK):3.*/s//$(SPEF_MARK):3 $(INNOVUS_ADD_CAP)/' < $(INPUT_NAME).spef > $(INPUT_NAME)_altered.spef
+innovus: innovus_script run_innovus sdf
 
 # dirty hack to remove the interconnect delays as we are using two different delay models and in one they are considered and in the other not
 # this is a big problem for inertial delay and thus comparison, therefore all the interconnect delays are removed
