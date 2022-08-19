@@ -2,7 +2,7 @@
 simulator lang=spice
 
 *.PARAM pw=<sed>pw<sed>as
-.PARAM supp=1.2V slope=0.1fs
+.PARAM supp=1.2V slope=50ps
 .PARAM t_init0=0.1ns t_init1=0.174ns
 .PARAM baseVal=0V peakVal=1.2V tend=1020.0ns
 
