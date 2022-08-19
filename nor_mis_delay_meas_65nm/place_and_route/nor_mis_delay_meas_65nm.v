@@ -25,6 +25,6 @@ module nor_inv_chain (myinA1, myinA2, myout);
        NR2M0N TERM_NOR0 ( .A (DUT_OUT), .B (GND), .Z (TERM_STAGE0));
        NR2M0N TERM_NOR1 ( .A (TERM_STAGE0), .B (GND), .Z (TERM_STAGE1));
        NR2M0N TERM_NOR2 ( .A (TERM_STAGE1), .B (GND), .Z (TERM_STAGE2));
-       NR2M0N TERM_NOR3 ( .A (TERM_STAGE2), .B (GND), .Z (TERM_STAGE3));
+       NR2M0N TERM_NOR3 ( .A (TERM_STAGE2), .B (GND), .Z (myout));
 
 endmodule
