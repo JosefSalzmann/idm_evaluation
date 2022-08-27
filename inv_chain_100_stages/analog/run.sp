@@ -13,7 +13,7 @@ simulator lang=spice
 .INCLUDE /home/s11777724/involution_tool_library_files/backend/spice/cell/INV_X1.sp
 
 **** SPECTRE Back Annotation
-.option spef='../place_and_route/inv_chain_100_stages.spef'
+.option spef='../place_and_route/inv_chain_100_stages_generic_parasitics.spef'
 ****
 
 .TEMP 25
