@@ -43,7 +43,6 @@ VDD VDD GND 0.8v
 .PARAM t35 = 3.5ns
 .PARAM t55 = 5.5ns
 
-VDD VDD 0   DC=supp
 VINA Input_A GND PWL 0ns baseVal t1 baseVal 't1+slope' peakVal 
 + t2 peakVal 't2+slope' baseVal 
 + t3 baseVal 't3+slope' peakVal 
