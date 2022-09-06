@@ -14,7 +14,7 @@ simulator lang=spice
 .INCLUDE cgate.sp
 
 **** SPECTRE Back Annotation
-.option spef='/home/s11777724/JS/idm_evaluation/cgate_test/place_and_route/cgate_test.spef'
+.option spef='/home/s11777724/JS/idm_evaluation/cgate_test/place_and_route/cgate_test_restitch.spef'
 ****
 
 .TEMP 25
