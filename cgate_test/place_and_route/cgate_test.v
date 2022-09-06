@@ -6,6 +6,6 @@ module nor_funnel (Input_A, Input_B, Output);
        BUF_X8 BUFFER_A ( .I (Input_A), .Z (A) );
        BUF_X8 BUFFER_B ( .I (Input_B), .Z (B) );
        NOR2_X1 CGATE ( .A1 (A), .A2 (B), .ZN (Z));
-       BUF_X8 BUFFER_B ( .I (Z), .Z (Output) );
+       BUF_X8 BUFFER_Z ( .I (Z), .Z (Output) );
 
 endmodule
