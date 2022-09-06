@@ -4,7 +4,7 @@ simulator lang=spice
 *.PARAM pw=<sed>pw<sed>as
 .PARAM supp=0.8V slope=0.1fs
 .PARAM t_init0=0.1ns t_init1=0.174ns
-.PARAM baseVal=0V peakVal=0.8V tend=7.0ns
+.PARAM baseVal=0V peakVal=0.8V tend=700.0ns
 
 
 .LIB /home/s11777724/involution_tool_library_files/backend/spice/fet.inc CMG
@@ -34,14 +34,14 @@ simulator lang=spice
 * vdd
 VDD VDD GND 0.8v
 
-.PARAM t1 = 1ns
-.PARAM t2 = 2ns
-.PARAM t3 = 3ns
-.PARAM t4 = 4ns
-.PARAM t5 = 5ns
-.PARAM t6 = 6ns
-.PARAM t35 = 3.5ns
-.PARAM t55 = 5.5ns
+.PARAM t1 = 100ns
+.PARAM t2 = 200ns
+.PARAM t3 = 300ns
+.PARAM t4 = 400ns
+.PARAM t5 = 500ns
+.PARAM t6 = 600ns
+.PARAM t35 = 350ns
+.PARAM t55 = 550ns
 
 VINA Input_A GND PWL 0ns baseVal t1 baseVal 't1+slope' peakVal 
 + t2 peakVal 't2+slope' baseVal 
