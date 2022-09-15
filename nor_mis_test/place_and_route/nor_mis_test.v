@@ -21,7 +21,7 @@ module nor_mis_test (myin_A, myin_B, myout);
        NOR2_X1 NOR_A_10 ( .A1 (STAGE_A_9), .A2 (GND), .ZN (STAGE_A_10));
 
 
-       NOR2_X1 NOR_B_0 ( .A1 (GND), .A2 (myin_A), .ZN (STAGE_B_0));
+       NOR2_X1 NOR_B_0 ( .A1 (GND), .A2 (myin_B), .ZN (STAGE_B_0));
        NOR2_X1 NOR_B_1 ( .A1 (GND), .A2 (STAGE_B_0), .ZN (STAGE_B_1));   
        NOR2_X1 NOR_B_2 ( .A1 (GND), .A2 (STAGE_B_1), .ZN (STAGE_B_2));   
        NOR2_X1 NOR_B_3 ( .A1 (GND), .A2 (STAGE_B_2), .ZN (STAGE_B_3));   
