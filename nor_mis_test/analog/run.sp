@@ -33,8 +33,8 @@ simulator lang=spice
 * vdd
 VDD VDD GND 0.8v
 
-VIN myin_A GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
-VIN myin_B GND PWL 0ns peakVal t_init0 peakVal 't_init0+slope' baseVal t_init1 baseVal 't_init1+slope' peakVal
+VIN_A myin_A GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
+VIN_B myin_B GND PWL 0ns peakVal t_init0 peakVal 't_init0+slope' baseVal t_init1 baseVal 't_init1+slope' peakVal
 
 * circuit under test
 XNOR_A_0 myin_A GND STAGE_A_0 VDD VDD GND GND NOR2_X1
@@ -61,7 +61,7 @@ XNOR_B_8 GND STAGE_B_7 STAGE_B_8 VDD VDD GND GND NOR2_X1
 XNOR_B_9 GND STAGE_B_8 STAGE_B_9 VDD VDD GND GND NOR2_X1
 XNOR_B_10 GND STAGE_B_9 STAGE_B_10 VDD VDD GND GND NOR2_X1
 
-XNOR_B_10 STAGE_A_10 STAGE_B_10 STAGE_MIS VDD VDD GND GND NOR2_X1
+XNOR_B_11 STAGE_A_10 STAGE_B_10 STAGE_MIS VDD VDD GND GND NOR2_X1
 
 XNOR_OUT_0 GND STAGE_MIS STAGE_OUT_0 VDD VDD GND GND NOR2_X1
 XNOR_OUT_1 GND STAGE_OUT_0 STAGE_OUT_1 VDD VDD GND GND NOR2_X1
