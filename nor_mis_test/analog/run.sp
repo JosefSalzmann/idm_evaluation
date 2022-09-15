@@ -34,7 +34,7 @@ simulator lang=spice
 VDD VDD GND 0.8v
 
 VIN myin_A GND PWL 0ns baseVal t_init0 baseVal 't_init0+slope' peakVal t_init1 peakVal 't_init1+slope' baseVal
-VIN myin_A GND PWL 0ns peakVal t_init0 peakVal 't_init0+slope' baseVal t_init1 baseVal 't_init1+slope' peakVal
+VIN myin_B GND PWL 0ns peakVal t_init0 peakVal 't_init0+slope' baseVal t_init1 baseVal 't_init1+slope' peakVal
 
 * circuit under test
 XNOR_A_0 myin_A GND STAGE_A_0 VDD VDD GND GND NOR2_X1
