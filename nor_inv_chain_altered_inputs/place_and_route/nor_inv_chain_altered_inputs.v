@@ -11,15 +11,15 @@ module nor_inv_chain_altered_inputs (myin, myout);
 
 
        NOR2_X1 NOR0 ( .A1 (myin), .A2 (GND), .ZN (STAGE0));
-       NOR2_X1 NOR1 ( .A2 (STAGE0), .A1 (GND), .ZN (STAGE1));
+       NOR2_X1 NOR1 ( .A1 (STAGE0), .A2 (GND), .ZN (STAGE1));
        NOR2_X1 NOR2 ( .A1 (STAGE1), .A2 (GND), .ZN (STAGE2));
-       NOR2_X1 NOR3 ( .A2 (STAGE2), .A1 (GND), .ZN (STAGE3));
+       NOR2_X1 NOR3 ( .A1 (STAGE2), .A2 (GND), .ZN (STAGE3));
        NOR2_X1 NOR4 ( .A1 (STAGE3), .A2 (GND), .ZN (STAGE4));
-       NOR2_X1 NOR5 ( .A2 (STAGE4), .A1 (GND), .ZN (STAGE5));
+       NOR2_X1 NOR5 ( .A1 (STAGE4), .A2 (GND), .ZN (STAGE5));
        NOR2_X1 NOR6 ( .A1 (STAGE5), .A2 (GND), .ZN (STAGE6));
-       NOR2_X1 NOR7 ( .A2 (STAGE6), .A1 (GND), .ZN (STAGE7));
+       NOR2_X1 NOR7 ( .A1 (STAGE6), .A2 (GND), .ZN (STAGE7));
        NOR2_X1 NOR8 ( .A1 (STAGE7), .A2 (GND), .ZN (STAGE8));
-       NOR2_X1 NOR9 ( .A2 (STAGE8), .A1 (GND), .ZN (STAGE9));
+       NOR2_X1 NOR9 ( .A1 (STAGE8), .A2 (GND), .ZN (STAGE9));
        NOR2_X1 NOR10 ( .A1 (STAGE9), .A2 (GND), .ZN (STAGE10));
        NOR2_X1 NOR11 ( .A2 (STAGE10), .A1 (GND), .ZN (STAGE11));
        NOR2_X1 NOR12 ( .A1 (STAGE11), .A2 (GND), .ZN (STAGE12));
