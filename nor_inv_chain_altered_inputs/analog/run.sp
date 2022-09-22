@@ -13,7 +13,7 @@ simulator lang=spice
 .INCLUDE /home/s11777724/involution_tool_library_files/backend/spice/cell/NOR2_X1.sp
 
 **** SPECTRE Back Annotation
-.option spef='../place_and_route/generic_parasitics.spef'
+.option spef='../place_and_route/nor_inv_chain_altered_inputs_generic.spef'
 ****
 
 .TEMP 25
