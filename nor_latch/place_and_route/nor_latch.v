@@ -26,9 +26,9 @@ module nor_funnel (myin_A, myin_B);
        NOR2_X1 NOR_B_9 ( .A1 (GND), .A2 (STAGE_B_8), .ZN (in_B));
 
 
-       wire Q, Q_not;
-       NOR2_X1 NOR_SR_A ( .A1 (in_A), .A2 (Q_not), .ZN (Q));
-       NOR2_X1 NOR_SR_B ( .A1 (Q), .A2 (in_B), .ZN (Q_not));
+       wire STAGE_Q, STAGE_Q_not;
+       NOR2_X1 NOR_SR_A ( .A1 (in_A), .A2 (STAGE_Q_not), .ZN (STAGE_Q));
+       NOR2_X1 NOR_SR_B ( .A1 (STAGE_Q), .A2 (in_B), .ZN (STAGE_Q_not));
 
        
 
