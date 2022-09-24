@@ -14,7 +14,7 @@ simulator lang=spice
 .INCLUDE /home/s11777724/involution_tool_library_files/backend/spice/cell/INV_X1.sp
 
 **** SPECTRE Back Annotation
-.option spef='/home/s11777724/JS/idm_evaluation/nor_funnel/place_and_route/nor_funnel_generic_parasitics.spef'
+.option spef='/home/s11777724/JS/idm_evaluation/nor_latch/place_and_route/nor_latch_generic_parasitics.spef'
 ****
 
 .TEMP 25
