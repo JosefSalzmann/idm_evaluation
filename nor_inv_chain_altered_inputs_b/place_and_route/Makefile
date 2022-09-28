@@ -2,7 +2,7 @@
 # hardware design provided in a netlist style description (VHDL or Verilog)
 #
 
-INPUT_FILE=nor_A_nor_B_inv_inv_chain.v
+INPUT_FILE=nor_inv_chain_altered_inputs_b.v
 EXTENSION=$(suffix $(INPUT_FILE))
 INPUT_NAME=$(basename $(notdir $(INPUT_FILE)))
 # do not set / comment this variable if your input file does not contain solely a netlist
