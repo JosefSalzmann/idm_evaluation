@@ -3,7 +3,7 @@ module nor_inv_chain_altered_inputs (myin, myout);
        output myout;
 
        wire GND = 1'b0;
-       wire STAGE0, STAGE1, STAGE2, STAGE3, STAGE4, STAGE5;
+       wire STAGE0, STAGE2, STAGE3, STAGE4, STAGE5;
        wire STAGE6, STAGE7, STAGE8, STAGE9, STAGE10, STAGE11;
        wire STAGE12, STAGE13, STAGE14, STAGE15, STAGE16, STAGE17;
        wire STAGE18, STAGE19, STAGE20, STAGE21, STAGE22, STAGE23;
@@ -11,8 +11,7 @@ module nor_inv_chain_altered_inputs (myin, myout);
 
 
        NOR2_X1 NOR0 ( .A1 (GND), .A2 (myin), .ZN (STAGE0));
-       NOR2_X1 NOR1 ( .A1 (GND), .A2 (STAGE0), .ZN (STAGE1));
-       NOR2_X1 NOR2 ( .A1 (GND), .A2 (STAGE1), .ZN (STAGE2));
+       NOR2_X1 NOR2 ( .A1 (GND), .A2 (STAGE0), .ZN (STAGE2));
        NOR2_X1 NOR3 ( .A1 (GND), .A2 (STAGE2), .ZN (STAGE3));
        NOR2_X1 NOR4 ( .A1 (GND), .A2 (STAGE3), .ZN (STAGE4));
        NOR2_X1 NOR5 ( .A1 (GND), .A2 (STAGE4), .ZN (STAGE5));
