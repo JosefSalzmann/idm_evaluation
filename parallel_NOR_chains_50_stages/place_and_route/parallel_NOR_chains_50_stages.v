@@ -1,11 +1,11 @@
-module parallel_NOR_chains_50_stages(A1, A2, Z1, Z2);
-       input A1, A2;
-       output Z1, Z2;
-       
+module parallel_NOR_chains_50_stages(IN_A1, IN_A2, OUT_Z1, OUT_Z2);
+       input IN_A1, IN_A2;
+       output OUT_Z1, OUT_Z2;
+
 
        wire STAGE_0_OUT_1, STAGE_0_OUT_2;
-       NOR2_X2 X_NOR_STAGE_0_1 (.A1(A1), .A2(A2), .ZN(STAGE_0_OUT_1));
-       NOR2_X2 X_NOR_STAGE_0_2 (.A1(A1), .A2(A2), .ZN(STAGE_0_OUT_2));
+       NOR2_X2 X_NOR_STAGE_0_1 (.A1(IN_A1), .A2(IN_A2), .ZN(STAGE_0_OUT_1));
+       NOR2_X2 X_NOR_STAGE_0_2 (.A1(IN_A1), .A2(IN_A2), .ZN(STAGE_0_OUT_2));
 
        wire STAGE_1_OUT_1, STAGE_1_OUT_2;
        NOR2_X2 X_NOR_STAGE_1_1 (.A1(STAGE_0_OUT_1), .A2(STAGE_0_OUT_2), .ZN(STAGE_1_OUT_1));
@@ -216,7 +216,7 @@ module parallel_NOR_chains_50_stages(A1, A2, Z1, Z2);
        NOR2_X2 X_NOR_STAGE_52_2 (.A1(STAGE_51_OUT_1), .A2(STAGE_51_OUT_2), .ZN(STAGE_52_OUT_2));
 
        wire STAGE_53_OUT_1, STAGE_53_OUT_2;
-       NOR2_X2 X_NOR_STAGE_53_1 (.A1(STAGE_52_OUT_1), .A2(STAGE_52_OUT_2), .ZN(Z1));
-       NOR2_X2 X_NOR_STAGE_53_2 (.A1(STAGE_52_OUT_1), .A2(STAGE_52_OUT_2), .ZN(Z2));
+       NOR2_X2 X_NOR_STAGE_53_1 (.A1(STAGE_52_OUT_1), .A2(STAGE_52_OUT_2), .ZN(OUT_Z1));
+       NOR2_X2 X_NOR_STAGE_53_2 (.A1(STAGE_52_OUT_1), .A2(STAGE_52_OUT_2), .ZN(OUT_Z2));
 
 endmodule
